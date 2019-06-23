@@ -1,11 +1,8 @@
 #include "graphics/graphics.h"
-
-using namespace std;
+#include "game.h"
+#include <iostream>
 
 int main(int argc, const char* argv[]) {
-    Graphics graphics;
-    while (true) {
+    Game game;
 
-    }
-    return 0;
 }

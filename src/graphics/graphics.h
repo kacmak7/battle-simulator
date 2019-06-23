@@ -28,7 +28,7 @@ public:
 	void flip();
 
 	// clears the screen
-	void clear();
+	void clean();
 	
 	// Returns the renderer
 	SDL_Renderer* getRenderer() const;

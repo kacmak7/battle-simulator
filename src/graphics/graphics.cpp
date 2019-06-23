@@ -1,9 +1,8 @@
-
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
 #include "graphics.h"
-#include "globals.h"
+#include "../globals.h"
 
 using namespace std;
 
@@ -13,8 +12,8 @@ Graphics::Graphics() {
 }
 
 Graphics::~Graphics() {
-	SDL_DestroyWindow(this->_window);
-	SDL_DestroyRenderer(this->_renderer);
+	//SDL_DestroyWindow(this->_window);
+	//SDL_DestroyRenderer(this->_renderer);
 }
 
 SDL_Surface* Graphics::loadImage(const std::string &filePath) {
@@ -32,7 +31,7 @@ void Graphics::flip() {
 	SDL_RenderPresent(this->_renderer);
 }
 
-void Graphics::clear() {
+void Graphics::clean() {
 	SDL_RenderClear(this->_renderer);
 }
 
