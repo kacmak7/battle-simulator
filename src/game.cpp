@@ -1,5 +1,5 @@
 #include <SDL2/SDL.h>
-#include <iostream>
+#include <spdlog/spdlog.h>
 #include <unistd.h>
 #include "game.h"
 #include "graphics/graphics.h"
@@ -14,7 +14,7 @@ Game::~Game() {
 }
 
 void Game::start() {
-    std::cout << "start" << std::endl;
+    spdlog::info("Game started");
     Graphics graphics; // start graphics
     //Input input;
     SDL_Event event;
@@ -29,11 +29,11 @@ void Game::start() {
                 }
             }
             else if (event.type == SDL_QUIT) {
-                std::cout << "QUIT" << std::endl; //test
+                spdlog::info("QUIT");
                 return;
             }
         }
 
     }
-    std::cout << "end" << std::endl;
+    //std::cout << "end" << std::endl;
 }
