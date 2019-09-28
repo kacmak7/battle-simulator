@@ -37,8 +37,8 @@ public:
 	SDL_Window* getWindow() const;
 
 private:
-	SDL_Window* _window;
-	SDL_Renderer* _renderer;
+	SDL_Window* window;
+	SDL_Renderer* renderer;
 
 	std::map<std::string, SDL_Surface*> _spriteSheets;
 };
