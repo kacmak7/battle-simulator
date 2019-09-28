@@ -1,5 +1,4 @@
 #include <SDL2/SDL.h>
-#include <spdlog/spdlog.h>
 #include <unistd.h>
 #include "game.h"
 #include "graphics/graphics.h"
@@ -13,8 +12,7 @@ Game::~Game() {
 
 }
 
-void Game::start() {
-    spdlog::info("Game started");
+void Game::start()
     Graphics graphics; // start graphics
     //Input input;
     SDL_Event event;
@@ -25,11 +23,11 @@ void Game::start() {
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {
                 if (event.key.repeat == 0) {
-
+                    SDL_Log("KEY DOWN");
                 }
             }
             else if (event.type == SDL_QUIT) {
-                spdlog::info("QUIT");
+                SDL_Log("Quit");
                 return;
             }
         }
