@@ -33,6 +33,9 @@ public:
 	// Returns the renderer
 	SDL_Renderer* getRenderer() const;
 
+	// Return the window
+	SDL_Window* getWindow() const;
+
 private:
 	SDL_Window* _window;
 	SDL_Renderer* _renderer;

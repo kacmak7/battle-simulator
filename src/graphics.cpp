@@ -2,7 +2,7 @@
 #include <SDL2/SDL_image.h>
 
 #include "graphics.h"
-#include "../globals.h"
+#include "globals.h"
 
 using namespace std;
 
@@ -38,3 +38,7 @@ void Graphics::clean() {
 SDL_Renderer* Graphics::getRenderer() const {
 	return this->_renderer;
 }
+
+SDL_Window* Graphics::getWindow() const {
+    return this->_window;
+};
