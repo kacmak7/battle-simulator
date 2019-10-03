@@ -4,8 +4,6 @@
 #include "graphics.h"
 #include "globals.h"
 
-using namespace std;
-
 Graphics::Graphics() {
 	SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, 0, &this->window, &this->renderer);
 	SDL_SetWindowTitle(this->window, "Battle");

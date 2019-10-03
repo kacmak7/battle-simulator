@@ -2,6 +2,8 @@
 #include <unistd.h>
 #include "game.h"
 #include "graphics.h"
+#include "fps.h"
+#include <iostream>
 
 Game::Game() {
     SDL_Init(SDL_INIT_EVERYTHING);
@@ -15,6 +17,7 @@ Game::~Game() {
 void Game::start() {
     Graphics graphics; // graphics starts here
     SDL_Event event;
+    Fps fps;
 
     SDL_Renderer* renderer = graphics.getRenderer();
 
@@ -32,8 +35,10 @@ void Game::start() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
     graphics.flip();
+
     // main loop
     while (true) {
+        fps.frameStart = SDL_GetTicks();
         graphics.flip();
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {
@@ -46,5 +51,6 @@ void Game::start() {
                 return;
             }
         }
+        fps.delay();
     }
 }
