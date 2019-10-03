@@ -21,19 +21,19 @@ public:
 	 */
 	SDL_Surface* loadImage(const std::string &filePath);
 
-	//Draws a texture to a certain part of the screen
+	// Draws a texture to a certain part of the screen
 	void blitSurface(SDL_Texture* source, SDL_Rect* sourceRectangle, SDL_Rect* destinationRectangle);
 
-	//Renders everything to the screen
+	// Renders everything to the screen
 	void flip();
 
-	// clears the screen
+	// Clears the screen
 	void clean();
 	
 	// Returns the renderer
 	SDL_Renderer* getRenderer() const;
 
-	// Return the window
+	// Returns the window
 	SDL_Window* getWindow() const;
 
 private:

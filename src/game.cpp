@@ -13,7 +13,7 @@ Game::~Game() {
 }
 
 void Game::start() {
-    Graphics graphics; // start graphics
+    Graphics graphics; // graphics starts here
     SDL_Event event;
 
     SDL_Renderer* renderer = graphics.getRenderer();
@@ -27,13 +27,14 @@ void Game::start() {
     rect.h = 200;
 
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderDrawRect(renderer, &rect);
+    SDL_RenderFillRect(renderer, &rect);
 
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
-    SDL_RenderPresent(renderer);
-
+    graphics.flip();
+    // main loop
     while (true) {
+        graphics.flip();
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {
                 if (event.key.repeat == 0) {
