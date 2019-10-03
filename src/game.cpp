@@ -18,27 +18,16 @@ void Game::start() {
     Graphics graphics; // graphics starts here
     SDL_Event event;
     Fps fps;
-
     SDL_Renderer* renderer = graphics.getRenderer();
-
     SDL_RenderClear(renderer);
 
-    SDL_Rect rect;
-    rect.x = 0;
-    rect.y = 5;
-    rect.w = 100;
-    rect.h = 200;
-
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderFillRect(renderer, &rect);
-
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-
-    graphics.flip();
+    // test
+    graphics.drawRectangle(10, 10, 60, 30);
 
     // main loop
     while (true) {
         fps.frameStart = SDL_GetTicks();
+        SDL_Log("Frame");
         graphics.flip();
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {

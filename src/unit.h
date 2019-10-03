@@ -9,6 +9,7 @@ private:
     int x; // position
     int y; // position
 
+//TODO: to define how to bind animation to object
 
 };
 

@@ -29,7 +29,16 @@ public:
 
 	// Clears the screen
 	void clean();
-	
+
+	// Draws a rectangle on x,y position and w and h dimensions
+	void drawRectangle(int x, int y, int w, int h);
+
+	// Set draw color
+	//void setDrawColor();
+
+	// Set draw color to default
+	//void setDrawColorToDefault();
+
 	// Returns the renderer
 	SDL_Renderer* getRenderer() const;
 

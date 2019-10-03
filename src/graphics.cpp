@@ -33,6 +33,25 @@ void Graphics::clean() {
 	SDL_RenderClear(this->renderer);
 }
 
+void Graphics::drawRectangle(int x, int y, int w, int h) {
+    SDL_Rect rect;
+    rect.x = x;
+    rect.y = y;
+    rect.w = w;
+    rect.h = h;
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderFillRect(renderer, &rect);
+}
+
+//TODO: to decide what to do with that
+//void Graphics::setDrawColor(int r, int g, int b, int a) {
+//    SDLRenderDrawColor(renderer, r, g, b, a)
+//}
+
+//void Graphics::setDrawColorToDefault() {
+//    SDLRenderDrawColor(renderer, 0, 0, 0, 255);
+//}
+
 SDL_Renderer* Graphics::getRenderer() const {
 	return this->renderer;
 }
