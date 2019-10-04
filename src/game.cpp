@@ -23,10 +23,10 @@ void Game::start() {
     SDL_RenderClear(renderer);
 
     // test drawings
-    graphics.drawRectangle(10, 10, 60, 30);
     for (int i = 0; i < 1000; i++) {
+    //TODO: get rid of globals.h
         SDL_SetRenderDrawColor(renderer, rand()%155 + 100, rand()%155 + 100, rand()%155 + 100, 255);
-        SDL_RenderDrawPoint(renderer, rand()%400, rand()%400);
+        graphics.drawPoint(rand()%100, rand()%200);
     }
     //
 
