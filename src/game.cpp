@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "fps.h"
 #include <iostream>
+#include <stdlib.h>
 
 Game::Game() {
     SDL_Init(SDL_INIT_EVERYTHING);
@@ -21,8 +22,13 @@ void Game::start() {
     SDL_Renderer* renderer = graphics.getRenderer();
     SDL_RenderClear(renderer);
 
-    // test
+    // test drawings
     graphics.drawRectangle(10, 10, 60, 30);
+    for (int i = 0; i < 1000; i++) {
+        SDL_SetRenderDrawColor(renderer, rand()%155 + 100, rand()%155 + 100, rand()%155 + 100, 255);
+        SDL_RenderDrawPoint(renderer, rand()%400, rand()%400);
+    }
+    //
 
     // main loop
     while (true) {
