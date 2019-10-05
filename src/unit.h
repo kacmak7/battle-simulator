@@ -3,7 +3,10 @@
 
 class Unit {
 public:
-    Unit();
+    Unit(int x_pos, int y_pos) {
+        x = x_pos;
+        y = y_pos;
+    }
     ~Unit();
 private:
     int x; // position

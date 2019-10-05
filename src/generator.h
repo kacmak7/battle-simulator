@@ -12,5 +12,6 @@ public:
     // Generates and deploys units to battle field
     void generateAndDeployUnits(int numberOfUnits, int x, int y);
 };
+//TODO: pointers ;)
 
 #endif
