@@ -3,14 +3,12 @@
 
 class Unit {
 public:
-    Unit(int x_pos, int y_pos) {
-        x = x_pos;
-        y = y_pos;
-    }
+    Unit(int xPos, int yPos, int side);
     ~Unit();
 private:
     int x; // position
     int y; // position
+    int side;
 
 //TODO: to define how to bind animation to object
 
