@@ -3,15 +3,16 @@
 
 class Unit {
 public:
-    Unit(int xPos, int yPos, int side);
+    Unit(int x, int y, int team);
     ~Unit();
+
 private:
     int x; // position
     int y; // position
-    int side;
+    int team;
 
-//TODO: to define how to bind animation to object
 
 };
 
 #endif
+//TODO: feature bug: covering of the units

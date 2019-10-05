@@ -16,11 +16,11 @@ Game::~Game() {
 }
 
 void Game::start() {
-    Graphics graphics; // graphics starts here
+    Graphics graphics;
     SDL_Event event;
     Fps fps;
     SDL_Renderer* renderer = graphics.getRenderer();
-    SDL_RenderClear(renderer);
+    graphics.clean();
 
     // test drawings
     for (int i = 0; i < 1000; i++) {
@@ -33,12 +33,10 @@ void Game::start() {
     // main loop
     while (true) {
         fps.frameStart = SDL_GetTicks();
-        SDL_Log("Frame");
         graphics.flip();
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {
                 if (event.key.repeat == 0) {
-                    SDL_SetWindowFullscreen(graphics.getWindow(), SDL_WINDOW_FULLSCREEN);
                     SDL_Log("KEY DOWN");
                 }
             } else if (event.type == SDL_QUIT) {
