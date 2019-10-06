@@ -4,7 +4,7 @@ battle : main.o graphics.o game.o fps.o
 main.o : src/main.cpp src/graphics.h
 	g++ -c src/main.cpp
 
-graphics.o: src/graphics.cpp src/globals.h
+graphics.o: src/graphics.cpp
 	g++ -c src/graphics.cpp
 
 game.o: src/game.cpp src/graphics.h

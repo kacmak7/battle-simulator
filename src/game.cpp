@@ -23,10 +23,9 @@ void Game::start() {
     graphics.clean();
 
     // test drawings
-    for (int i = 0; i < 1000; i++) {
-    //TODO: get rid of globals.h
-        SDL_SetRenderDrawColor(renderer, rand()%155 + 100, rand()%155 + 100, rand()%155 + 100, 255);
-        graphics.drawPoint(rand()%100, rand()%200);
+    for (int i = 0; i < 100000; i++) {
+        SDL_SetRenderDrawColor(renderer, rand() % 155 + 100, rand() % 155 + 100, rand() % 155 + 100, 255);
+        graphics.drawPoint(rand() % graphics.SCREEN_WIDTH, rand() % graphics.SCREEN_HEIGHT);
     }
     //
 

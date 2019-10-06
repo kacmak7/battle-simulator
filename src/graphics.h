@@ -14,6 +14,9 @@ public:
 	Graphics();
 	~Graphics();
 
+	static const int SCREEN_WIDTH;
+	static const int SCREEN_HEIGHT;
+
 	/* SDL_Surface* loadImage
 	 * Loads an image into the _spriteSheets map if it doesn't already exist.
 	 * As a result, each image will only ever be loaded once

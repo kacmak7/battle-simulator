@@ -2,10 +2,9 @@
 #include <SDL2/SDL_image.h>
 
 #include "graphics.h"
-#include "globals.h"
 
 Graphics::Graphics() {
-	SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH, globals::SCREEN_HEIGHT, 0, &this->window, &this->renderer);
+	SDL_CreateWindowAndRenderer(this->SCREEN_WIDTH, this->SCREEN_HEIGHT, 0, &this->window, &this->renderer);
 	SDL_SetWindowTitle(this->window, "Battle");
 }
 
@@ -13,6 +12,9 @@ Graphics::~Graphics() {
 	//SDL_DestroyWindow(this->window);
 	//SDL_DestroyRenderer(this->renderer);
 }
+
+const int Graphics::SCREEN_WIDTH = 1280;
+const int Graphics::SCREEN_HEIGHT = 720;
 
 SDL_Surface* Graphics::loadImage(const std::string &filePath) {
 	if (this->_spriteSheets.count(filePath) == 0) {
