@@ -3,6 +3,7 @@
 #include "game.h"
 #include "graphics.h"
 #include "fps.h"
+#include "unit.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -11,28 +12,26 @@ Game::Game() {
     this->start();
 }
 
-Game::~Game() {
-
-}
+Game::~Game() {}
 
 void Game::start() {
-    Graphics graphics;
+    Graphics* graphics = new Graphics();
     SDL_Event event;
     Fps fps;
-    SDL_Renderer* renderer = graphics.getRenderer();
-    graphics.clean();
+    SDL_Renderer* renderer = graphics->getRenderer();
+    graphics->clean();
 
     // test drawings
-    for (int i = 0; i < 100000; i++) {
-        SDL_SetRenderDrawColor(renderer, rand() % 155 + 100, rand() % 155 + 100, rand() % 155 + 100, 255);
-        graphics.drawPoint(rand() % graphics.SCREEN_WIDTH, rand() % graphics.SCREEN_HEIGHT);
-    }
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    Unit unit(10, 10, 0, graphics);
     //
 
     // main loop
     while (true) {
         fps.frameStart = SDL_GetTicks();
-        graphics.flip();
+        graphics->flip();
+        SDL_Log("x");
+        SDL_Log("frame");
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {
                 if (event.key.repeat == 0) {
