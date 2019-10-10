@@ -4,7 +4,7 @@
 #include "graphics.h"
 #include "utils.h"
 
-class Unit {
+class Unit { // TODO: ability to search other Units (based on ID fields etc.)
 public:
     Unit(int x, int y, int team, Graphics* graphics);
     ~Unit();
@@ -13,9 +13,19 @@ public:
     Utils::Position position;
     int team;
 
-    void move();
+    void action();
 private:
+    // Goes towards the closest enemy
+    void move();
+
+    // Hurts the nearby enemy
+    void attack();
+
+    // Returns the exact next position of the unit
     Utils::Position getNextPosition();
+
+    // Calculates and return the closest enemy unit
+    Unit::Unit getClosestEnemy();
 };
 
 #endif
