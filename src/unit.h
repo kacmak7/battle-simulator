@@ -13,7 +13,10 @@ public:
     int x; // position
     int y; // position
     int team;
+
+    void move();
 private:
+    void getNextPosition();
 
 };
 

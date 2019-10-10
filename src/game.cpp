@@ -9,16 +9,14 @@
 
 Game::Game() {
     SDL_Init(SDL_INIT_EVERYTHING);
+    this->graphics = new Graphics();
+    this->renderer = graphics->getRenderer();
     this->start();
 }
 
 Game::~Game() {}
 
 void Game::start() {
-    Graphics* graphics = new Graphics();
-    SDL_Event event;
-    Fps fps;
-    SDL_Renderer* renderer = graphics->getRenderer();
     graphics->clean();
 
     // test drawings
@@ -38,10 +36,15 @@ void Game::start() {
                     SDL_Log("KEY DOWN");
                 }
             } else if (event.type == SDL_QUIT) {
-                SDL_Log("Quit");
+                this->exit();
                 return;
             }
         }
         fps.delay();
     }
+}
+
+// TODO
+void Game::exit() {
+    SDL_Log("Quit");
 }
