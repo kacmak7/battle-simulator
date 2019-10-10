@@ -3,8 +3,7 @@
 
 class Utils {
 public:
-    Utils();
-    ~Utils();
+    struct Position;
 };
 
 #endif

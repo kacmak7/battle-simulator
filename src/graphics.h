@@ -5,6 +5,7 @@
 
 #include <map>
 #include <string>
+#include "utils.h"
 
 struct SDL_Window;
 struct SDL_Renderer;
@@ -34,7 +35,7 @@ public:
 	void clean();
 
 	// Lights a pixel on x, y position
-	void drawPoint(int x, int y);
+	void drawPoint(Utils::Position position);
 
 	// Sets a color of next drawings
 	void setDrawColor(int r, int g, int b, int a);

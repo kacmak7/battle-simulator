@@ -2,6 +2,7 @@
 #define UNIT_H
 
 #include "graphics.h"
+#include "utils.h"
 
 class Unit {
 public:
@@ -9,15 +10,12 @@ public:
     ~Unit();
 
     Graphics* graphics;
-
-    int x; // position
-    int y; // position
+    Utils::Position position;
     int team;
 
     void move();
 private:
-    void getNextPosition();
-
+    Utils::Position getNextPosition();
 };
 
 #endif

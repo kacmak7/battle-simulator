@@ -2,6 +2,7 @@
 #include <SDL2/SDL_image.h>
 
 #include "graphics.h"
+#include "utils.h"
 
 Graphics::Graphics() {
 	SDL_CreateWindowAndRenderer(this->SCREEN_WIDTH, this->SCREEN_HEIGHT, 0, &this->window, &this->renderer);
@@ -35,8 +36,8 @@ void Graphics::clean() {
 	SDL_RenderClear(this->renderer);
 }
 
-void Graphics::drawPoint(int x, int y) {
-    SDL_RenderDrawPoint(this->renderer, x, y);
+void Graphics::drawPoint(Utils::Position position) {
+    SDL_RenderDrawPoint(this->renderer, position.x, position.y);
 }
 
 void Graphics::setDrawColor(int r, int g, int b, int a) {
