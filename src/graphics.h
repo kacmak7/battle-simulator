@@ -35,10 +35,10 @@ public:
 	void clean();
 
 	// Lights up a pixel
-	void drawPoint(Utils::Position position);
+	void drawPoint(Position position);
 
 	// Turns off a pixel
-	void erasePoint(Utils::Position position);
+	void erasePoint(Position position);
 
 	// Sets a color of next drawings
 	void setDrawColor(int r, int g, int b, int a);

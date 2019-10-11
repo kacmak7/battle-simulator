@@ -12,14 +12,14 @@ Unit::Unit(int x, int y, int team, Graphics* graphics) {
 Unit::~Unit() {}
 
 void Unit::move() {
-    this->graphics->erasePoint(this->position.x, this->position.y);
-    
-}
-
-Utils::Position Unit::getNextPosition() {
+    this->graphics->erasePoint(this->position);
 
 }
 
-Unit::Unit Unit::getClosestEnemy() {
+Position Unit::getNextPosition() {
+
+}
+
+Unit Unit::getClosestEnemy() {
 
 }

@@ -10,7 +10,7 @@ public:
     ~Unit();
 
     Graphics* graphics;
-    Utils::Position position;
+    Position position;
     int team;
 
     void action();
@@ -22,10 +22,10 @@ private:
     void attack();
 
     // Returns the exact next position of the unit
-    Utils::Position getNextPosition();
+    Position getNextPosition();
 
     // Calculates and return the closest enemy unit
-    Unit::Unit getClosestEnemy();
+    Unit getClosestEnemy();
 };
 
 #endif
