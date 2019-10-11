@@ -1,14 +1,22 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-struct Position {
+#include <math.h>
+
+struct Position { // TODO: rename to 'Point'
     int x, y;
+
     Position() :
         x(0), y(0)
     {}
+
     Position(int x, int y) :
         x(x), y(y)
     {}
+
+    Position getDistanceBetweenPoints(Position p1, Position p2) {
+        // sqrt((p1.x-p1.y)^2 + (p2.x-p2.y)^2)
+    }
 };
 
 #endif

@@ -32,5 +32,12 @@ Position Unit::getNextPosition() {
 }
 
 Unit Unit::getClosestEnemy() {
+    for (int i = 0; i < Unit::currentId; i++) {
+        Unit u = unit.find(i);
+        if (u != units.end()) {
+            if (u.team != this->team) {
 
+            }
+        }
+    }
 }

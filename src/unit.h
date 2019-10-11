@@ -37,5 +37,4 @@ private:
 };
 
 #endif
-//TODO: feature bug: covering of the units
 //TODO: redis?????????
