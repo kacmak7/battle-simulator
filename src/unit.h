@@ -3,6 +3,7 @@
 
 #include "graphics.h"
 #include "utils.h"
+#include <map>
 
 class Unit { // TODO: ability to search other Units (based on ID fields etc.)
 public:
@@ -15,6 +16,13 @@ public:
 
     void action();
 private:
+
+    static int currentId;
+
+    static std::map<int, Unit*> units;
+
+    int id;
+
     // Goes towards the closest enemy
     void move();
 
