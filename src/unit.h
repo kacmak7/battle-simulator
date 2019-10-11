@@ -5,7 +5,7 @@
 #include "utils.h"
 #include <map>
 
-class Unit { // TODO: ability to search other Units (based on ID fields etc.)
+class Unit {
 public:
     Unit(int x, int y, int team, Graphics* graphics);
     ~Unit();

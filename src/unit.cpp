@@ -2,8 +2,8 @@
 #include "graphics.h"
 
 Unit::Unit(int x, int y, int team, Graphics* graphics) {
-    this->id = currentId++;
-    units[id] = this;
+    this->id = Unit::currentId++;
+    Unit::units[id] = this;
     this->position.x = x;
     this->position.y = y;
     this->team = team;
@@ -13,8 +13,12 @@ Unit::Unit(int x, int y, int team, Graphics* graphics) {
 
 Unit::~Unit() {
     this->graphics->erasePoint(this->position);
-    units.erase(this->id);
+    Unit::units.erase(this->id);
 }
+
+int Unit::currentId = 0;
+
+std::map<int, Unit*> Unit::units;
 
 void Unit::move() {
     this->graphics->erasePoint(this->position);
