@@ -14,7 +14,7 @@ struct Position { // TODO: rename to 'Point'
         x(x), y(y)
     {}
 
-    Position getDistanceBetweenPoints(Position p1, Position p2) {
+    int getDistanceToPoint(Position p) {
         // sqrt((p1.x-p1.y)^2 + (p2.x-p2.y)^2)
     }
 };

@@ -31,13 +31,29 @@ Position Unit::getNextPosition() {
 
 }
 
+// TODO: optimize it
 Unit Unit::getClosestEnemy() {
-    for (int i = 0; i < Unit::currentId; i++) {
-        Unit u = unit.find(i);
-        if (u != units.end()) {
-            if (u.team != this->team) {
-
+    if (!units.empty()) {
+        Unit result = nullptr;
+        int distance;
+        if (Graphics::SCREEN_WIDTH >= Graphics::SCREEN_HEIGHT) {
+            distance = Graphics::SCREEN_WIDTH;
+        } else {
+            distance = Graphics::SCREEN_HEIGHT;
+        }
+        for (int i = 0; i < Unit::currentId; i++) {
+            Unit u = unit.find(i);
+            if (u != units.end()) {
+                if (u.team != this->team) { // omit friendly units
+                    int tempDistance = position.getDistanceToPoint(u.position);
+                    if (tempDistance < distance) {
+                        distance = tempDistance;
+                        result = u;
+                    }
+                }
             }
         }
+        return result;
     }
+    return nullptr;
 }
