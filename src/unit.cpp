@@ -32,20 +32,20 @@ Position Unit::getNextPosition() {
 }
 
 // TODO: optimize it
-Unit Unit::getClosestEnemy() {
+Unit* Unit::getClosestEnemy() {
     if (!units.empty()) {
-        Unit result;
+        Unit *result;
         int distance;
         if (Graphics::SCREEN_WIDTH >= Graphics::SCREEN_HEIGHT) {
             distance = Graphics::SCREEN_WIDTH;
         } else {
             distance = Graphics::SCREEN_HEIGHT;
         }
-        for (int i = 0; i < Unit::currentId; i++)
-            if (units.find(i) != units.end()) {
-                Unit u = units.at(i);
-                if (u.team != this->team) { // omit friendly units
-                    int tempDistance = position.getDistanceToPoint(u.position);
+        for (int i = 0; i < Unit::currentId; i++) {
+            if (units.find(i) != units.end()) { // check if unit is still alive
+                Unit *u = units.at(i);
+                if (u->team != this->team) { // omit friendly units
+                    int tempDistance = position.getDistanceToPoint(u->position);
                     if (tempDistance < distance) {
                         distance = tempDistance;
                         result = u;

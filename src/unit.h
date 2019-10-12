@@ -33,7 +33,7 @@ private:
     Position getNextPosition();
 
     // Calculates and return the closest enemy unit
-    Unit getClosestEnemy();
+    Unit* getClosestEnemy();
 };
 
 #endif
