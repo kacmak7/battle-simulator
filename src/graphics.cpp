@@ -36,13 +36,13 @@ void Graphics::clean() {
 	SDL_RenderClear(this->renderer);
 }
 
-void Graphics::drawPoint(Position position) {
-    SDL_RenderDrawPoint(this->renderer, position.x, position.y);
+void Graphics::drawPoint(Vector2 p) {
+    SDL_RenderDrawPoint(this->renderer, p.x, p.y);
 }
 
-void Graphics::erasePoint(Position position) {
+void Graphics::erasePoint(Vector2 p) {
     this->setDrawColor(0, 0, 0, 0);
-    SDL_RenderDrawPoint(this->renderer, position.x, position.y);
+    SDL_RenderDrawPoint(this->renderer, p.x, p.y);
 }
 
 void Graphics::setDrawColor(int r, int g, int b, int a) {

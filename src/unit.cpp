@@ -20,6 +20,16 @@ int Unit::currentId = 0;
 
 std::map<int, Unit*> Unit::units;
 
+void Unit::action() {
+    // just a concept TODO
+    if (isNextToEnemy()) {
+        attack();
+    }
+    else {
+        move();
+    }
+}
+
 void Unit::move() {
     this->graphics->erasePoint(this->position);
     this->position = this->getNextPosition();
@@ -27,11 +37,19 @@ void Unit::move() {
     this->graphics->drawPoint(this->position);
 }
 
-Position Unit::getNextPosition() {
+void Unit::attack() {
 
 }
 
-// TODO: optimize it
+Vector2 Unit::getNextPosition() {
+
+}
+
+// TODO
+bool Unit::isNextToEnemy() {
+    return true;
+}
+
 Unit* Unit::getClosestEnemy() {
     if (!units.empty()) {
         Unit *result;

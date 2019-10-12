@@ -3,20 +3,19 @@
 
 #include <math.h>
 
-struct Position { // TODO: rename to 'Point'
+struct Vector2 {
     int x, y;
 
-    Position() :
+    Vector2() :
         x(0), y(0)
     {}
 
-    Position(int x, int y) :
+    Vector2(int x, int y) :
         x(x), y(y)
     {}
 
-    int getDistanceToPoint(Position p) {
-        // sqrt((p1.x-p1.y)^2 + (p2.x-p2.y)^2)
-        return 0;
+    int getDistanceToPoint(Vector2 point) {
+        return sqrt((x-y)^2 + (point.x-point.y)^2);
     }
 };
 

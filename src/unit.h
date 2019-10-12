@@ -11,16 +11,21 @@ public:
     ~Unit();
 
     Graphics* graphics;
-    Position position;
+
+    Vector2 position;
+
     int team;
 
     void action();
 private:
 
+    // Counter of IDs
     static int currentId;
 
+    // Storage of IDs
     static std::map<int, Unit*> units;
 
+    // Unique object ID
     int id;
 
     // Goes towards the closest enemy
@@ -29,12 +34,24 @@ private:
     // Hurts the nearby enemy
     void attack();
 
-    // Returns the exact next position of the unit
-    Position getNextPosition();
+    // Calculates the exact next position to move in
+    Vector2 getNextPosition();
 
-    // Calculates and return the closest enemy unit
+    // Checks if enemy is there
+    bool isNextToEnemy();
+
+    /* Stores the last direction that unit moved in
+     * up    1
+     * right 2
+     * down  3
+     * left  4
+     * NONE  0
+     */
+    int lastMove;
+
+    // Calculates the closest enemy unit
     Unit* getClosestEnemy();
 };
 
 #endif
-//TODO: redis?????????
+// TODO: redis?????????
