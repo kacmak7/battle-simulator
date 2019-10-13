@@ -45,6 +45,16 @@ Vector2 Unit::getNextPosition() {
 
 }
 
+bool* Unit::canMove(Vector2 position) {
+    if (!units.empty()) {
+        for (int i = 0; i < Unit::currentId; i++) {
+            if (units.find(i) != units.end()) {
+
+            }
+        }
+    }
+}
+
 // TODO
 bool Unit::isNextToEnemy() {
     if (this->closestEnemy) { // can be null
@@ -62,7 +72,7 @@ void* Unit::assignClosestEnemy() {
             distance = Graphics::SCREEN_HEIGHT;
         }
         for (int i = 0; i < Unit::currentId; i++) {
-            if (units.find(i) != units.end()) { // check if unit is still alive
+            if (units.find(i) != units.end()) { // check if current unit is still alive
                 Unit *u = units.at(i);
                 if (u->team != this->team) { // omit friendly units
                     int tempDistance = this->position.getDistanceToPoint(u->position);
