@@ -38,7 +38,7 @@ private:
     Vector2 getNextPosition();
 
     // Checks if unit can move on given position
-    bool* canMove(Vector2 position);
+    bool canMove(Vector2 position);
 
     // Checks if enemy is there
     bool isNextToEnemy();
@@ -52,11 +52,14 @@ private:
      */
     int lastMove;
 
-    // Calculates the closest enemy unit
+    // Saves the closest enemy unit
     void* assignClosestEnemy();
 
     // The closest enemy unit
     Unit* closestEnemy;
+
+    // Calculates the closest unit (ally or enemy)
+    Unit* getClosestUnit(int team);
 };
 
 #endif

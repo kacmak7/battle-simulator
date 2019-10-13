@@ -13,7 +13,7 @@ Unit::Unit(int x, int y, int team, Graphics* graphics) {
 
 Unit::~Unit() {
     this->graphics->erasePoint(this->position);
-    Unit::units.erase(this->id);
+    Unit::units.erase(this->id); // TODO: consider if it's better to null an object in Unit::units
 }
 
 int Unit::currentId = 0;
@@ -31,10 +31,13 @@ void Unit::action() {
 }
 
 void Unit::move() {
-    this->graphics->erasePoint(this->position);
-    this->position = this->getNextPosition();
-    //this->graphics->setDrawColor();
-    this->graphics->drawPoint(this->position);
+    Vector2 nextPosition = this->getNextPosition();
+    if (canMove(nextPosition)) {
+        this->position = nextPosition;
+        this->graphics->erasePoint(this->position);
+        //this->graphics->setDrawColor();
+        this->graphics->drawPoint(this->position);
+    }
 }
 
 void Unit::attack() {
@@ -45,26 +48,28 @@ Vector2 Unit::getNextPosition() {
 
 }
 
-bool* Unit::canMove(Vector2 position) {
+bool Unit::canMove(Vector2 pos) {
     if (!units.empty()) {
         for (int i = 0; i < Unit::currentId; i++) {
             if (units.find(i) != units.end()) {
-
+                if (units.at(i)->position == pos) {
+                    return false;
+                }
             }
         }
     }
+    return true;
 }
 
 bool Unit::isNextToEnemy() {
-    if (this->closestEnemy) { // can be null
+    this->assignClosestEnemy(); // TODO: optimization
+    if (this->closestEnemy) {
 
     }
 }
 
 void* Unit::assignClosestEnemy() {
-
-    // TODO: pack in generic method to not to repeat the same code in canMove()
-
+    // TODO: pack it in generic method to not to repeat the same code in canMove()
     if (!units.empty()) {
         Unit *result;
         int distance;
@@ -76,7 +81,7 @@ void* Unit::assignClosestEnemy() {
         for (int i = 0; i < Unit::currentId; i++) {
             if (units.find(i) != units.end()) { // check if current unit is still alive
                 Unit *u = units.at(i);
-                if (u->team != this->team) { // omit friendly units
+                if (u->team != this->team) { // omit team mates
                     int tempDistance = this->position.getDistanceToPoint(u->position);
                     if (tempDistance < distance) {
                         distance = tempDistance;
@@ -88,4 +93,8 @@ void* Unit::assignClosestEnemy() {
         this->closestEnemy = result;
     }
     this->closestEnemy = nullptr;
+}
+
+Unit* Unit::getClosestUnit(int team) {
+
 }
