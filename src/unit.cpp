@@ -1,10 +1,11 @@
 #include "unit.h"
 #include "graphics.h"
 
-Unit::Unit(Vector2 position, int team, Graphics* graphics) {
+Unit::Unit(int x, int y, int team, Graphics* graphics) {
     this->id = Unit::currentId++;
     Unit::units[id] = this;
-    this->position = position;
+    this->position.x = x;
+    this->position.y = y;
     this->team = team;
     this->graphics = graphics;
     this->graphics->drawPoint(this->position);
@@ -20,12 +21,12 @@ int Unit::currentId = 0;
 std::map<int, Unit*> Unit::units;
 
 void Unit::action() {
-    // just a concept TODO
-    if (isNextToEnemy()) {
-        attack();
-    }
-    else {
-        move();
+    if (!units.empty()) {
+        if (isNextToEnemy()) {
+            attack();
+        } else {
+            move();
+        }
     }
 }
 
@@ -48,6 +49,9 @@ Vector2 Unit::getNextPosition() {
 }
 
 bool Unit::canMove(Vector2 pos) {
+
+    // TODO
+
     if (!units.empty()) {
         for (int i = 0; i < Unit::currentId; i++) {
             if (units.find(i) != units.end()) {
