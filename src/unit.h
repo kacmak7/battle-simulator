@@ -50,7 +50,9 @@ private:
     int lastMove;
 
     // Calculates the closest enemy unit
-    Unit* getClosestEnemy();
+    void* assignClosestEnemy();
+
+    Unit* closestEnemy;
 };
 
 #endif

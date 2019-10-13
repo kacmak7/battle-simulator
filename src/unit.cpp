@@ -47,10 +47,12 @@ Vector2 Unit::getNextPosition() {
 
 // TODO
 bool Unit::isNextToEnemy() {
-    return true;
+    if (this->closestEnemy) { // can be null
+
+    }
 }
 
-Unit* Unit::getClosestEnemy() {
+void* Unit::assignClosestEnemy() {
     if (!units.empty()) {
         Unit *result;
         int distance;
@@ -63,7 +65,7 @@ Unit* Unit::getClosestEnemy() {
             if (units.find(i) != units.end()) { // check if unit is still alive
                 Unit *u = units.at(i);
                 if (u->team != this->team) { // omit friendly units
-                    int tempDistance = position.getDistanceToPoint(u->position);
+                    int tempDistance = this->position.getDistanceToPoint(u->position);
                     if (tempDistance < distance) {
                         distance = tempDistance;
                         result = u;
@@ -71,7 +73,7 @@ Unit* Unit::getClosestEnemy() {
                 }
             }
         }
-        return result;
+        this->closestEnemy = result;
     }
-    return nullptr;
+    this->closestEnemy = nullptr;
 }
