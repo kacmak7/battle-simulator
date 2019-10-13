@@ -55,7 +55,6 @@ bool* Unit::canMove(Vector2 position) {
     }
 }
 
-// TODO
 bool Unit::isNextToEnemy() {
     if (this->closestEnemy) { // can be null
 
@@ -63,6 +62,9 @@ bool Unit::isNextToEnemy() {
 }
 
 void* Unit::assignClosestEnemy() {
+
+    // TODO: pack in generic method to not to repeat the same code in canMove()
+
     if (!units.empty()) {
         Unit *result;
         int distance;
