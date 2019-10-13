@@ -7,7 +7,7 @@
 
 class Unit {
 public:
-    Unit(int x, int y, int team, Graphics* graphics);
+    Unit(Vector2 position, int team, Graphics* graphics);
     ~Unit();
 
     Graphics* graphics;

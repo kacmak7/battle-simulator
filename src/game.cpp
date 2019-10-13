@@ -21,7 +21,8 @@ void Game::start() {
 
     // test drawings
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    Unit unit(10, 10, 0, graphics);
+    Vector2 pos(10, 10);
+    Unit unit(pos, 0, graphics);
     //
 
     // main loop

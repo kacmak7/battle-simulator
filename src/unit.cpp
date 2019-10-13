@@ -1,11 +1,10 @@
 #include "unit.h"
 #include "graphics.h"
 
-Unit::Unit(int x, int y, int team, Graphics* graphics) {
+Unit::Unit(Vector2 position, int team, Graphics* graphics) {
     this->id = Unit::currentId++;
     Unit::units[id] = this;
-    this->position.x = x;
-    this->position.y = y;
+    this->position = position;
     this->team = team;
     this->graphics = graphics;
     this->graphics->drawPoint(this->position);
