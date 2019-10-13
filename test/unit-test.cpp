@@ -12,7 +12,7 @@ TEST_CASE("Single Unit on the battlefield") {
     }
 
     SECTION("Test if unit is not moving after action()") {
-        int initialPosition = unit.position();
+        Vector2 initialPosition = unit.position();
         unit.action();
         REQUIRE(unit.position == initialPosition);
     }
