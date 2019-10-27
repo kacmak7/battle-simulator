@@ -34,13 +34,16 @@ private:
     // Hurts the nearby enemy
     void attack();
 
-    // Calculates the exact next position to move in
-    Vector2 getNextPosition();
+    // Stores the next position to which Unit will move in next iteration
+    Vector2 nextPosition;
 
-    // Checks if unit can move on given position
+    // Calculates and assigns the next position
+    Vector2 calculateNextPosition();
+
+    // True if unit is allowed to move to given position
     bool canMove(Vector2 position);
 
-    // Checks if enemy is there
+    // True if enemy is next to the Unit
     bool isNextToEnemy();
 
     /* Stores the last direction that unit moved in

@@ -44,8 +44,8 @@ void Unit::attack() {
 
 }
 
-Vector2 Unit::getNextPosition() {
-
+Vector2 Unit::calculateNextPosition() {
+    // TODO
 }
 
 bool Unit::canMove(Vector2 pos) {
