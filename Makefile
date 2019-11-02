@@ -3,8 +3,8 @@ all: battle test
 battle: main.o graphics.o game.o fps.o unit.o
 	g++ main.o graphics.o game.o fps.o unit.o -o battle -lSDL2 -lSDL2_image
 
-test: unit-test.o unit.o
-	g++ unit-test.o unit.o -o test
+unittest: unit-test.o unit.o graphics.o
+	g++ unit-test.o unit.o graphics.o -o unittest -lSDL2 -lSDL2_image
 
 main.o: src/main.cpp src/graphics.h
 	g++ -c src/main.cpp
@@ -22,5 +22,5 @@ unit.o: src/unit.cpp
 	g++ -c src/unit.cpp
 
 # unit tests:
-unit-test.o: test/unit-test.cpp src/unit.h
+unit-test.o: test/unit-test.cpp libs/catch.hpp src/unit.h
 	g++ -c test/unit-test.cpp

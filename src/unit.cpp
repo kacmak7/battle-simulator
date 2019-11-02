@@ -21,17 +21,15 @@ int Unit::currentId = 0;
 std::map<int, Unit*> Unit::units;
 
 void Unit::action() {
-    if (!units.empty()) {
-        if (isNextToEnemy()) {
-            attack();
-        } else {
-            move();
-        }
+    if (isNextToEnemy()) {
+        attack();
+    } else {
+        move();
     }
 }
 
 void Unit::move() {
-    Vector2 nextPosition = this->getNextPosition();
+    Vector2 nextPosition = this->calculateNextPosition();
     if (canMove(nextPosition)) {
         this->position = nextPosition;
         this->graphics->erasePoint(this->position);

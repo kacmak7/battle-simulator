@@ -1,7 +1,8 @@
+#define CATCH_CONFIG_MAIN
 #include "../libs/catch.hpp"
 #include "../src/unit.h"
 
-// for each SECTION the TEST_CASE is executed from the start
+// for each SECTION the TEST_CASE is executed from the beginning
 
 TEST_CASE("Single Unit on the battlefield") {
     Graphics* graphics;

@@ -19,10 +19,10 @@ public:
     void action();
 private:
 
-    // Counter of IDs
+    // Counter of all IDs
     static int currentId;
 
-    // Storage of IDs
+    // Storage of all IDs
     static std::map<int, Unit*> units;
 
     // Unique object ID
@@ -33,9 +33,6 @@ private:
 
     // Hurts the nearby enemy
     void attack();
-
-    // Stores the next position to which Unit will move in next iteration
-    Vector2 nextPosition;
 
     // Calculates and assigns the next position
     Vector2 calculateNextPosition();
