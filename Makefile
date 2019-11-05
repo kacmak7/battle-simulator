@@ -6,6 +6,7 @@ battle: main.o graphics.o game.o fps.o unit.o
 unittest: unit-test.o unit.o graphics.o
 	g++ unit-test.o unit.o graphics.o -o unittest -lSDL2 -lSDL2_image
 
+# objects:
 main.o: src/main.cpp src/graphics.h
 	g++ -c src/main.cpp
 
@@ -21,6 +22,5 @@ fps.o: src/fps.cpp
 unit.o: src/unit.cpp
 	g++ -c src/unit.cpp
 
-# unit tests:
-unit-test.o: test/unit-test.cpp libs/catch.hpp src/unit.h
+unit-test.o: test/unit-test.cpp lib/catch.hpp src/unit.h
 	g++ -c test/unit-test.cpp
