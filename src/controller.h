@@ -12,12 +12,12 @@ public:
     //TODO: implement logic of units deployment (exact initial place of every unit assuming they're circles)
 
     // Generates and deploys units to battle field
-    void deployUnits(int numberOfUnits, Vector2 pos);
+    void deployUnits(int numberOfUnits, Vector2 pos, int type);
 
 private:
     // Algorithms of units deployment
     void deployOptimally(int numberOfUnits, Vector2 pos);
-    void deployRandomly(int numberOfUnits, pos);
+    void deployRandomly(int numberOfUnits, Vector2 pos);
 };
 //TODO: pointers ;)
 

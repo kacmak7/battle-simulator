@@ -6,12 +6,19 @@ Controller::~Controller() {}
 
 void Controller::deployUnits(int numberOfUnits, Vector2 pos, int type) {
     switch (type) {
-        case 1: deployOptimal(numberOfUnits, pos);
+        case 1: deployOptimally(numberOfUnits, pos);
             break;
         case 2: deployRandomly(numberOfUnits, pos);
-        default: deployOptimal;
+            break;
+        default: deployOptimally(numberOfUnits, pos);
             break;
     }
 }
 
-void Controller
+void Controller::deployOptimally(int numberOfUnits, Vector2 pos) {
+
+}
+
+void Controller::deployRandomly(int numberOfUnits, Vector2 pos) {
+
+}

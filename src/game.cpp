@@ -4,6 +4,7 @@
 #include "graphics.h"
 #include "fps.h"
 #include "unit.h"
+#include "controller.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -11,6 +12,7 @@ Game::Game() {
     SDL_Init(SDL_INIT_EVERYTHING);
     this->graphics = new Graphics();
     this->renderer = graphics->getRenderer();
+    this->controller = new Controller();
     this->start();
 }
 
