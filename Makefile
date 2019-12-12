@@ -8,7 +8,7 @@ battletest: unit-test.o graphics.o controller.o unit.o
 	g++ unit-test.o graphics.o controller.o unit.o -o $@ -lSDL2 -lSDL2_image
 
 clean:
-	rm -f *.o
+	rm -f *.o battle battletest
 
 # objects:
 main.o: src/main.cpp src/graphics.h
