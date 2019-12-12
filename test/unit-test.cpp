@@ -1,10 +1,12 @@
 #define CATCH_CONFIG_MAIN
+
 #include "../lib/catch.hpp"
 #include "../src/unit.h"
+#include "../src/utils.h"
 
 // for each SECTION the TEST_CASE is executed from the beginning
 
-TEST_CASE("Single Unit on the battlefield", "[format]") {
+TEST_CASE("Single Unit on the battlefield") {
     Graphics* graphics = new Graphics();
     Unit unit(1, 1, 0, graphics);
 

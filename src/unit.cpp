@@ -31,8 +31,8 @@ void Unit::action() {
 void Unit::move() {
     Vector2 nextPosition = this->calculateNextPosition();
     if (canMove(nextPosition)) {
-        this->position = nextPosition;
         this->graphics->erasePoint(this->position);
+        this->position = nextPosition;
         //this->graphics->setDrawColor();
         this->graphics->drawPoint(this->position);
     }
@@ -71,14 +71,18 @@ bool Unit::isNextToEnemy() {
 
 void* Unit::assignClosestEnemy() {
     // TODO: pack it in generic method to not to repeat the same code in canMove()
+    Vector2 corner1(0, 0);
+    Vector2 corner2(Graphics::SCREEN_WIDTH, Graphics::SCREEN_HEIGHT);
+    int maximumDistance = corner1.getDistanceToPoint(corner2);
     if (!units.empty()) {
         Unit *result;
         int distance;
-        if (Graphics::SCREEN_WIDTH >= Graphics::SCREEN_HEIGHT) {
-            distance = Graphics::SCREEN_WIDTH;
-        } else {
-            distance = Graphics::SCREEN_HEIGHT;
-        }
+        //if (Graphics::SCREEN_WIDTH >= Graphics::SCREEN_HEIGHT) {
+        //    distance = Graphics::SCREEN_WIDTH;
+        //} else {
+        //    distance = Graphics::SCREEN_HEIGHT;
+        //}
+
         for (int i = 0; i < Unit::currentId; i++) {
             if (units.find(i) != units.end()) { // check if current unit is still alive
                 Unit *u = units.at(i);

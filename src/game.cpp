@@ -49,7 +49,7 @@ void Game::start() {
     }
 }
 
-// TODO
+// TODO safe exit on demand
 void Game::exit() {
     SDL_Log("Quit");
 }
