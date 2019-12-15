@@ -7,7 +7,7 @@ namespace Utils {
     float round2dec(float f);
 }
 
-struct Vector2 {
+struct Vector2 { // TODO move this struct to the source file
     int x, y;
 
     Vector2() :
@@ -28,6 +28,18 @@ struct Vector2 {
 
     float getDistanceToPoint(Vector2 v) {
         return Utils::round2dec(sqrt(pow(x - v.x, 2) + pow(y - v.y, 2)));
+    }
+
+    bool isNeighbor(Vector2 v) {
+        int param1 = abs(x - v.x);
+        int param2 = abs(y - v.y);
+        if ((param1 == 0 || param1 == 1) && (param2 == 0 || param2 == 1) &&
+            (param1 == 1 || param2 == 1)) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 };
 
