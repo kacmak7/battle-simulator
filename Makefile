@@ -1,11 +1,11 @@
 # targets
 all: battle battletest
 
-battle: main.o graphics.o controller.o game.o fps.o unit.o
-	g++ main.o graphics.o controller.o game.o fps.o unit.o -o $@ -lSDL2 -lSDL2_image
+battle: main.o graphics.o controller.o game.o fps.o unit.o utils.o
+	g++ main.o graphics.o controller.o game.o fps.o unit.o utils.o -o $@ -lSDL2 -lSDL2_image
 
-battletest: utils-test.o graphics.o controller.o unit.o
-	g++ utils-test.o graphics.o controller.o unit.o -o $@ -lSDL2 -lSDL2_image
+battletest: utils-test.o graphics.o controller.o unit.o utils.o
+	g++ utils-test.o graphics.o controller.o unit.o utils.o -o $@ -lSDL2 -lSDL2_image
 
 clean:
 	rm -f *.o battle battletest
@@ -23,11 +23,14 @@ game.o: src/game.cpp src/graphics.h src/controller.h
 fps.o: src/fps.cpp
 	g++ -c src/fps.cpp
 
-unit.o: src/unit.cpp
+unit.o: src/unit.cpp src/utils.h
 	g++ -c src/unit.cpp
 
 controller.o: src/controller.cpp src/unit.h
 	g++ -c src/controller.cpp
+
+utils.o: src/utils.cpp
+	g++ -c src/utils.cpp
 
 # test objects
 unit-test.o: test/unit-test.cpp lib/catch.hpp src/unit.h

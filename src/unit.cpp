@@ -1,5 +1,6 @@
 #include "unit.h"
 #include "graphics.h"
+#include "utils.h"
 
 Unit::Unit(int x, int y, int team, Graphics* graphics) {
     this->id = Unit::currentId++;
@@ -13,7 +14,7 @@ Unit::Unit(int x, int y, int team, Graphics* graphics) {
 
 Unit::~Unit() {
     this->graphics->erasePoint(this->position);
-    Unit::units.erase(this->id); // TODO: consider if it's better to null an object in Unit::units
+    Unit::units.erase(this->id); // TODO: consider if it's better to null an object in map 'units'
 }
 
 int Unit::currentId = 0;
