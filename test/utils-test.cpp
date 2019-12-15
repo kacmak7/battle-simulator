@@ -12,6 +12,6 @@ TEST_CASE("Distances between points") {
     Vector2 p4(124,821);
     Vector2 p5(4212,8532);
 
-    REQUIRE(p1.getDistanceToPoint(p2) == 47.85);
-    REQUIRE(p4.getDistanceToPoint(p2) == 2.3);
+    REQUIRE(p1.getDistanceToPoint(p2) == (float)47.85);
+    REQUIRE(p4.getDistanceToPoint(p2) == (float)784.79);
 }
