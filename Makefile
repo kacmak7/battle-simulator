@@ -5,14 +5,16 @@ battle: main.o graphics.o controller.o game.o fps.o unit.o utils.o
 	g++ main.o graphics.o controller.o game.o fps.o unit.o utils.o -o $@ -lSDL2 -lSDL2_image
 
 tests: utilstest unittest
-	./utilstest
-	./unittest
 
 utilstest: utils-test.o utils.o
 	g++ utils-test.o graphics.o controller.o unit.o utils.o -o $@ -lSDL2 -lSDL2_image
+	./$@
+	rm -f $@
 
 unittest: unit-test.o graphics.o controller.o unit.o utils.o
 	g++ unit-test.o graphics.o controller.o unit.o utils.o -o $@ -lSDL2 -lSDL2_image
+	./$@
+	rm -f $@
 
 clean:
 	rm -f *.o battle battletest
