@@ -1,6 +1,7 @@
 #include "unit.h"
 #include "graphics.h"
 #include "utils.h"
+#include <iostream>
 
 Unit::Unit(int x, int y, int team, Graphics* graphics) {
     this->id = Unit::currentId++;
@@ -34,7 +35,7 @@ void Unit::move() {
     if (canMove(nextPosition)) {
         this->graphics->erasePoint(this->position);
         this->position = nextPosition;
-        //this->graphics->setDrawColor();
+        //this->graphics->setDrawColor(); TODO 'class' should define color
         this->graphics->drawPoint(this->position);
     }
 }
@@ -64,7 +65,7 @@ bool Unit::canMove(Vector2 pos) {
 }
 
 bool Unit::isNextToEnemy() {
-    this->assignClosestEnemy(); // TODO: optimization
+    this->assignClosestEnemy();
     if (this->closestEnemy) {
         if (this->position.isNeighbor(this->closestEnemy->position)) {
             return true;

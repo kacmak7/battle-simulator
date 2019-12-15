@@ -16,6 +16,7 @@ public:
 
     int team;
 
+
     void action();
 private:
 
