@@ -3,8 +3,6 @@
 #include "../lib/catch.hpp"
 #include "../src/utils.h"
 
-// for each SECTION the TEST_CASE is executed from the beginning
-
 TEST_CASE("Distances between points") {
     Vector2 p1(0,0);
     Vector2 p2(21,43);
