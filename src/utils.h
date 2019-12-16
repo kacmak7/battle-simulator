@@ -18,7 +18,7 @@ struct Vector2 { // TODO move this struct to the source file
     x(x), y(y)
     {}
 
-    bool operator==(const Vector2& v) {
+    bool operator == (const Vector2& v) {
         if (this->x == v.x && this->y == v.y) {
             return true;
         } else {
@@ -38,6 +38,22 @@ struct Vector2 { // TODO move this struct to the source file
             return true;
         }
         else {
+            return false;
+        }
+    }
+};
+
+struct Rgb { // TODO move this too
+    int red, green, blue;
+
+    Rgb(int r, int g, int b) :
+    red(r), green(g), blue(b)
+    {}
+
+    bool operator == (const Rgb& rgb) {
+        if (this->red == rgb.red && this->blue == rgb.blue && this->green ==rgb.green) {
+            return true;
+        } else {
             return false;
         }
     }

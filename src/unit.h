@@ -3,6 +3,7 @@
 
 #include "graphics.h"
 #include "utils.h"
+#include "class.h"
 #include <map>
 
 class Unit { // TODO: redis?????????
@@ -10,7 +11,12 @@ public:
     Unit(int x, int y, int team, Graphics* graphics);
     ~Unit();
 
+    /*
+     * performs attack or move depending on position of the enemy
+     */
     void action();
+
+    Class cl;
 private:
     /*
      * The only graphics API

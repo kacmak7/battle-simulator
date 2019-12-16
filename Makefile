@@ -32,7 +32,7 @@ game.o: src/game.cpp src/graphics.h src/controller.h
 fps.o: src/fps.cpp
 	g++ -c src/fps.cpp
 
-unit.o: src/unit.cpp src/utils.h
+unit.o: src/unit.cpp src/utils.h src/class.h
 	g++ -c src/unit.cpp
 
 controller.o: src/controller.cpp src/unit.h

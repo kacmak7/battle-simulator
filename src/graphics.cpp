@@ -41,12 +41,13 @@ void Graphics::drawPoint(Vector2 p) {
 }
 
 void Graphics::erasePoint(Vector2 p) {
-    this->setDrawColor(0, 0, 0, 0);
+    Rgb black(0, 0, 0);
+    this->setDrawColor(black, 0);
     SDL_RenderDrawPoint(this->renderer, p.x, p.y);
 }
 
-void Graphics::setDrawColor(int r, int g, int b, int a) {
-    SDL_SetRenderDrawColor(this->renderer, r, g, b, a);
+void Graphics::setDrawColor(Rgb rgb, int a) {
+    SDL_SetRenderDrawColor(this->renderer, rgb.red, rgb.green, rgb.blue, a);
 }
 
 SDL_Renderer* Graphics::getRenderer() const {

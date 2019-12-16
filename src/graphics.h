@@ -41,7 +41,7 @@ public:
 	void erasePoint(Vector2 p);
 
 	// Sets a color of next drawings
-	void setDrawColor(int r, int g, int b, int a);
+	void setDrawColor(Rgb color, int a);
 
 	// Returns the renderer
 	SDL_Renderer* getRenderer() const;

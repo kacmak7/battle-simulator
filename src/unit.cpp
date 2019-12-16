@@ -35,7 +35,7 @@ void Unit::move() {
     if (canMove(nextPosition)) {
         this->graphics->erasePoint(this->position);
         this->position = nextPosition;
-        //this->graphics->setDrawColor(); TODO 'class' should define color
+        this->graphics->setDrawColor(cl.getColor(), 0);
         this->graphics->drawPoint(this->position);
     }
 }
