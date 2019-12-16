@@ -5,43 +5,66 @@
 #include "utils.h"
 #include <map>
 
-class Unit {
+class Unit { // TODO: redis?????????
 public:
     Unit(int x, int y, int team, Graphics* graphics);
     ~Unit();
 
-    Graphics* graphics;
-
-    Vector2 position;
-
-    int team;
-
-
     void action();
 private:
+    /*
+     * The only graphics API
+     */
+    Graphics* graphics;
 
-    // Counter of all IDs
+    /*
+     * Stores current position
+     */
+    Vector2 position;
+
+    /*
+     * Defines which team unit belongs to. Needed to define who's an ally and who's not
+     */
+    int team;
+
+    /*
+     * Counter of all IDs
+     */
     static int currentId;
 
-    // Storage of all IDs
+    /*
+     * Storage of all IDs
+     */
     static std::map<int, Unit*> units;
 
-    // Unique object ID
+    /*
+     * Unique object ID
+     */
     int id;
 
-    // Goes towards the closest enemy
+    /*
+     * Goes towards the closest enemy
+     */
     void move();
 
-    // Hurts the nearby enemy
+    /*
+     * Hurts the nearby enemy
+     */
     void attack();
 
-    // Calculates and assigns the next position
+    /*
+     * Calculates and assigns the next position
+     */
     Vector2 calculateNextPosition();
 
-    // True if unit is allowed to move to given position
+    /*
+     * True if unit is allowed to move to given position
+     */
     bool canMove(Vector2 position);
 
-    // True if enemy is next to the Unit
+    /*
+     * True if enemy is next to the Unit
+     */
     bool isNextToEnemy();
 
     /* Stores the last direction that unit moved in
@@ -53,15 +76,20 @@ private:
      */
     int lastMove;
 
-    // Saves the closest enemy unit
+    /*
+     * Saves the closest enemy unit
+     */
     void* assignClosestEnemy();
 
-    // The closest enemy unit
+    /*
+     * The closest enemy unit
+     */
     Unit* closestEnemy;
 
-    // Calculates the closest unit (ally or enemy)
+    /*
+     * Calculates the closest unit (no matter if it's ally or enemy)
+     */
     Unit* getClosestUnit(int team);
 };
 
 #endif
-// TODO: redis?????????

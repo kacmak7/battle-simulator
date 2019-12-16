@@ -1,7 +1,7 @@
 #include "unit.h"
 #include "graphics.h"
 #include "utils.h"
-#include <iostream>
+#include <iostream> // TODO to be removed
 
 Unit::Unit(int x, int y, int team, Graphics* graphics) {
     this->id = Unit::currentId++;
@@ -15,7 +15,7 @@ Unit::Unit(int x, int y, int team, Graphics* graphics) {
 
 Unit::~Unit() {
     this->graphics->erasePoint(this->position);
-    Unit::units.erase(this->id); // TODO: consider if it's better to null an object in map 'units'
+    Unit::units.erase(this->id); // TODO: consider if it's better to null an object rather than delete from map
 }
 
 int Unit::currentId = 0;
