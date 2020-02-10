@@ -45,7 +45,8 @@ void Unit::attack() {
 }
 
 Vector2 Unit::calculateNextPosition() {
-    // TODO
+    Vector2 pos = new Vector2(0,0);
+    return pos;
 }
 
 bool Unit::canMove(Vector2 pos) {
@@ -74,7 +75,7 @@ bool Unit::isNextToEnemy() {
     return false;
 }
 
-void* Unit::assignClosestEnemy() {
+void Unit::assignClosestEnemy() {
     // TODO: maybe pack it in generic method to not to repeat the same code in canMove()
     Vector2 corner1(0, 0);
     Vector2 corner2(Graphics::SCREEN_WIDTH, Graphics::SCREEN_HEIGHT);
@@ -99,6 +100,6 @@ void* Unit::assignClosestEnemy() {
     this->closestEnemy = nullptr; // if there are no enemies
 }
 
-Unit* Unit::getClosestUnit(int team) {
-
-}
+//Unit* Unit::getClosestUnit(int team) {
+//  
+//}

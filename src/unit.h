@@ -16,7 +16,7 @@ public:
      */
     void action();
 
-    Class cl;
+    //Class cl;
 private:
     /*
      * The only graphics API
@@ -85,7 +85,7 @@ private:
     /*
      * Saves the closest enemy unit
      */
-    void* assignClosestEnemy();
+    void assignClosestEnemy();
 
     /*
      * The closest enemy unit
