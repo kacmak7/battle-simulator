@@ -1,6 +1,7 @@
 #include "unit.h"
 #include "graphics.h"
 #include "utils.h"
+#include "class.h"
 #include <iostream> // TODO to be removed
 
 Unit::Unit(int x, int y, int team, Graphics* graphics) {
@@ -11,6 +12,7 @@ Unit::Unit(int x, int y, int team, Graphics* graphics) {
     this->team = team;
     this->graphics = graphics;
     this->graphics->drawPoint(this->position);
+    this->cl = Class();
 }
 
 Unit::~Unit() {
@@ -45,8 +47,8 @@ void Unit::attack() {
 }
 
 Vector2 Unit::calculateNextPosition() {
-    Vector2 pos = new Vector2(0,0);
-    return pos;
+    Vector2 corner1(0, 0);
+    return corner1;
 }
 
 bool Unit::canMove(Vector2 pos) {

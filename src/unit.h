@@ -12,11 +12,14 @@ public:
     ~Unit();
 
     /*
-     * performs attack or move depending on position of the enemy
+     * Performs attack or move depending on position of the enemy
      */
     void action();
 
-    //Class cl;
+    /*
+     * Just some of the generic attributes
+     */
+    Class cl;
 private:
     /*
      * The only graphics API
