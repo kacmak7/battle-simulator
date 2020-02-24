@@ -3,7 +3,6 @@
 
 #include "graphics.h"
 #include "utils.h"
-#include "class.h"
 #include <map>
 
 class Unit { // TODO: redis?????????
@@ -16,10 +15,6 @@ public:
      */
     void action();
 
-    /*
-     * Just some of the generic attributes
-     */
-    Class cl;
 private:
     /*
      * The only graphics API

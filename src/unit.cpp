@@ -1,7 +1,6 @@
 #include "unit.h"
 #include "graphics.h"
 #include "utils.h"
-#include "class.h"
 #include <iostream> // TODO to be removed
 
 Unit::Unit(int x, int y, int team, Graphics* graphics) {
@@ -12,7 +11,6 @@ Unit::Unit(int x, int y, int team, Graphics* graphics) {
     this->team = team;
     this->graphics = graphics;
     this->graphics->drawPoint(this->position);
-    this->cl = Class();
 }
 
 Unit::~Unit() {
@@ -37,7 +35,6 @@ void Unit::move() {
     if (canMove(nextPosition)) {
         this->graphics->erasePoint(this->position);
         this->position = nextPosition;
-        this->graphics->setDrawColor(cl.getColor(), 0);
         this->graphics->drawPoint(this->position);
     }
 }
