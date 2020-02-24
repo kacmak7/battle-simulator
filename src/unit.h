@@ -3,11 +3,12 @@
 
 #include "graphics.h"
 #include "utils.h"
+#include "class.h"
 #include <map>
 
 class Unit { // TODO: redis?????????
 public:
-    Unit(int x, int y, int team, Graphics* graphics);
+    Unit(int x, int y, int team, Class* cl, Graphics* graphics);
     ~Unit();
 
     /*
@@ -16,6 +17,7 @@ public:
     void action();
 
 private:
+    Class* cl;
     /*
      * The only graphics API
      */
@@ -25,6 +27,24 @@ private:
      * Stores current position
      */
     Vector2 position;
+    
+    // /*
+    //  * Points of endurance. The more, the longer unit will last
+    //  * depends on class
+    //  */
+    // int health;
+
+    // /*
+    //  * Points of attack strength. The more, the bigger damage to opponents unit will provide
+    //  * Depends on class
+    //  */
+    // int strength;
+
+    // /*
+    //  * Specifies what color Unit of that class should wear
+    //  * Depends on team
+    //  */
+    // Rgb color;
 
     /*
      * Defines which team unit belongs to. Needed to define who's an ally and who's not

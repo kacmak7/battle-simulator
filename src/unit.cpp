@@ -1,14 +1,16 @@
 #include "unit.h"
 #include "graphics.h"
 #include "utils.h"
+#include "class.h"
 #include <iostream> // TODO to be removed
 
-Unit::Unit(int x, int y, int team, Graphics* graphics) {
+Unit::Unit(int x, int y, int team, Class* cl, Graphics* graphics) {
     this->id = Unit::currentId++;
     Unit::units[id] = this;
     this->position.x = x;
     this->position.y = y;
     this->team = team;
+    this->cl = cl;
     this->graphics = graphics;
     this->graphics->drawPoint(this->position);
 }
