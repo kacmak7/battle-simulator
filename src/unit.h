@@ -6,7 +6,7 @@
 #include "class.h"
 #include <map>
 
-class Unit { // TODO: redis?????????
+class Unit {
 public:
     Unit(int x, int y, int team, Class* cl, Graphics* graphics);
     ~Unit();

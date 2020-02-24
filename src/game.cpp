@@ -5,6 +5,7 @@
 #include "fps.h"
 #include "unit.h"
 #include "controller.h"
+#include "class.h"
 #include <iostream>
 #include <stdlib.h>
 
@@ -23,10 +24,13 @@ void Game::start() {
 
     // test drawings
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    Unit unit(10, 10, 0, graphics);
-    Unit unit1(20, 14, 0, graphics);
-    Unit unit2(14, 11, 0, graphics);
-    Unit unit3(18, 15, 0, graphics);
+
+    Class* bigone = new Class();
+
+    Unit unit(10, 10, 0, bigone, graphics);
+    Unit unit1(20, 14, 0, bigone, graphics);
+    Unit unit2(14, 11, 0, bigone, graphics);
+    Unit unit3(18, 15, 0, bigone, graphics);
     //
 
     // main loop

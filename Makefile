@@ -1,7 +1,7 @@
 # targets
 all: battle
 
-battle: main.o graphics.o controller.o game.o fps.o unit.o utils.o
+battle: main.o graphics.o controller.o game.o fps.o unit.o utils.o class.o
 	@g++ main.o graphics.o controller.o game.o fps.o unit.o utils.o -o $@ -lSDL2 -lSDL2_image
 
 tests: utilstest unittest
@@ -26,7 +26,7 @@ main.o: src/main.cpp src/graphics.h
 graphics.o: src/graphics.cpp
 	g++ -c src/graphics.cpp
 
-game.o: src/game.cpp src/graphics.h src/controller.h
+game.o: src/game.cpp src/graphics.h src/controller.h src/class.h
 	g++ -c src/game.cpp
 
 fps.o: src/fps.cpp
@@ -40,6 +40,9 @@ controller.o: src/controller.cpp src/unit.h
 
 utils.o: src/utils.cpp
 	g++ -c src/utils.cpp
+
+class.o: src/class.cpp src/utils.h
+	g++ -c src/class.cpp
 
 # test objects
 unit-test.o: test/unit-test.cpp lib/catch.hpp src/unit.h

@@ -1,7 +1,11 @@
 #include "class.h"
 #include "utils.h"
 
-Class::Class() {}
+Class::Class() {
+    // temporary test
+    Rgb testRgb(10,42,12);
+    this->color = testRgb;
+}
 
 Class::~Class() {}
 
