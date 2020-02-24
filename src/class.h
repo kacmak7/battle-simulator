@@ -8,8 +8,6 @@ public:
     Class();
     ~Class();
 
-    Rgb getColor();
-
 private:
     /*
      * Points of endurance. The more, the longer unit will last

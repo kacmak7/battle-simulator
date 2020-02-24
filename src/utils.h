@@ -46,6 +46,10 @@ struct Vector2 { // TODO move this struct to the source file
 struct Rgb { // TODO move this too
     int red, green, blue;
 
+    Rgb() :
+    red(0), green(0), blue(0)
+    {}
+
     Rgb(int r, int g, int b) :
     red(r), green(g), blue(b)
     {}

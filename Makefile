@@ -2,7 +2,7 @@
 all: battle
 
 battle: main.o graphics.o controller.o game.o fps.o unit.o utils.o class.o
-	@g++ main.o graphics.o controller.o game.o fps.o unit.o utils.o -o $@ -lSDL2 -lSDL2_image
+	@g++ main.o graphics.o controller.o game.o fps.o unit.o utils.o class.o -o $@ -lSDL2 -lSDL2_image
 
 tests: utilstest unittest
 
