@@ -23,13 +23,16 @@ void Game::start() {
     graphics->clean();
 
     // test drawings
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 
     Class* bigone = new Class();
 
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     Unit unit(10, 10, 0, bigone, graphics);
-    Unit unit1(20, 14, 0, bigone, graphics);
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+    Unit unit1(10, 9, 1, bigone, graphics);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
     Unit unit2(14, 11, 0, bigone, graphics);
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     Unit unit3(18, 15, 0, bigone, graphics);
     //
 
@@ -38,6 +41,7 @@ void Game::start() {
         fps.frameStart = SDL_GetTicks();
         graphics->flip();
         SDL_Log("x");
+        unit.action();
         SDL_Log("frame");
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {

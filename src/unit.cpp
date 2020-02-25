@@ -26,9 +26,11 @@ std::map<int, Unit*> Unit::units;
 
 void Unit::action() {
     if (isNextToEnemy()) {
-        attack();
+        SDL_Log("True");
+        //attack();
     } else {
-        move();
+        SDL_Log("False");
+        //move();
     }
 }
 
@@ -68,6 +70,7 @@ bool Unit::canMove(Vector2 pos) {
 
 bool Unit::isNextToEnemy() {
     this->assignClosestEnemy();
+    SDL_Log(this->closestEnemy.team);
     if (this->closestEnemy) {
         if (this->position.isNeighbor(this->closestEnemy->position)) {
             return true;
