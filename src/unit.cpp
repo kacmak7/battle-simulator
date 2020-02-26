@@ -70,7 +70,6 @@ bool Unit::canMove(Vector2 pos) {
 
 bool Unit::isNextToEnemy() {
     this->assignClosestEnemy();
-    SDL_Log(this->closestEnemy.team);
     if (this->closestEnemy) {
         if (this->position.isNeighbor(this->closestEnemy->position)) {
             return true;
@@ -100,8 +99,9 @@ void Unit::assignClosestEnemy() {
             }
         }
         this->closestEnemy = result;
+    } else {
+        this->closestEnemy = nullptr; // if there are no enemies
     }
-    this->closestEnemy = nullptr; // if there are no enemies
 }
 
 //Unit* Unit::getClosestUnit(int team) {
