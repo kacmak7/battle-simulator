@@ -53,40 +53,24 @@ Vector2 Unit::calculateNextPosition() {
     Vector2 result = this->position;
     if (this->closestEnemy) {
         double direction = this->position.getDirection(this->closestEnemy->position);
-        //switch (direction) { // TODO pack it in switch
-        //    case 3.14 ... 2.36:
-        //        result.y--;
-        //    case 2.36 ... 1.57:
-        //        result.x--;
-        //    case 1.57 ... 0.79:
-        //        result.x--;
-        //    case 0.79 ... 0:
-        //        result.y++;
-        //    case 0 ... -0.79:
-        //        result.y++;
-        //    case -0.79 ... -1.57:
-        //        result.x++;
-        //    case -1.57 ... -2.36:
-        //        result.x++;
-        //    case -2.36 ... -3.14:
-        //        result.y--;
-        //}
 
-        if (-3.14 <= direction < 2.36)
+        std::cout << direction << std::endl; // to be removed
+
+        if (-3.14 <= direction && direction < -2.36)
             result.y--;
-        else if (-2.36 <= direction < -1.57)
-            result.x++;
-        else if (-1.57 <= direction < -0.79)
-            result.x++;
-        else if (-0.79 <= direction < 0)
-            result.y++;
-        else if (0 <= direction < 0.79)
-            result.y++;
-        else if (0.79 <= direction < 1.57)
+        else if (-2.36 <= direction && direction < -1.57)
             result.x--;
-        else if (1.57 <= direction < 2.36)
+        else if (-1.57 <= direction && direction < -0.79)
             result.x--;
-        else if (2.36 <= direction <3.14)
+        else if (-0.79 <= direction && direction < 0)
+            result.y++;
+        else if (0 <= direction && direction < 0.79)
+            result.y++;
+        else if (0.79 <= direction && direction < 1.57)
+            result.x++;
+        else if (1.57 <= direction && direction < 2.36)
+            result.x++;
+        else if (2.36 <= direction && direction < 3.14)
             result.y--;
     }
     return result;

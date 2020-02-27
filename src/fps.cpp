@@ -4,7 +4,7 @@
 Fps::Fps() {}
 Fps::~Fps() {}
 
-const int Fps::FRAMES_PER_SECOND = 10; //temporary
+const int Fps::FRAMES_PER_SECOND = 30; //temporary
 const int Fps::FRAME_DELAY = 1000 / FRAMES_PER_SECOND;
 
 void Fps::delay() {
