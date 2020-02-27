@@ -105,12 +105,11 @@ bool Unit::isNextToEnemy() {
 
 void Unit::assignClosestEnemy() {
     // TODO: maybe pack it in generic method to not to repeat the same code in canMove()
-    Vector2 corner1(0, 0);
-    Vector2 corner2(Graphics::SCREEN_WIDTH, Graphics::SCREEN_HEIGHT);
-    int maxDistance = corner1.getDistanceToPoint(corner2);
     if (!units.empty()) {
         Unit *result;
-        int distance = maxDistance;
+        Vector2 corner1(0, 0);
+        Vector2 corner2(Graphics::SCREEN_WIDTH, Graphics::SCREEN_HEIGHT);
+        int distance = corner1.getDistanceToPoint(corner2);
         for (int i = 0; i < Unit::currentId; i++) {
             if (units.find(i) != units.end()) { // check if current unit is still alive TODO to be checked
                 Unit *u = units.at(i); // save current unit

@@ -23,7 +23,6 @@ void Game::start() {
     graphics->clean();
 
     // test drawings
-
     Rgb red(255, 0, 0);
     Rgb green(0, 255, 0);
     Class* fc = new Class(100, 25, red);
