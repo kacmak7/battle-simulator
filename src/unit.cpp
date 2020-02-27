@@ -53,9 +53,7 @@ Vector2 Unit::calculateNextPosition() {
     Vector2 result = this->position;
     if (this->closestEnemy) {
         double direction = this->position.getDirection(this->closestEnemy->position);
-
         std::cout << direction << std::endl; // to be removed
-
         if (-3.14 <= direction && direction < -2.36)
             result.y--;
         else if (-2.36 <= direction && direction < -1.57)
@@ -109,7 +107,7 @@ void Unit::assignClosestEnemy() {
     int maxDistance = corner1.getDistanceToPoint(corner2);
     if (!units.empty()) {
         Unit *result;
-        int distance;
+        int distance = maxDistance;
         for (int i = 0; i < Unit::currentId; i++) {
             if (units.find(i) != units.end()) { // check if current unit is still alive TODO to be checked
                 Unit *u = units.at(i); // save current unit

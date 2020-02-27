@@ -27,9 +27,9 @@ void Game::start() {
     Class* bigone = new Class();
 
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    Unit unit(100, 600, 0, bigone, graphics);
+    Unit unit(400, 550, 0, bigone, graphics);
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-    Unit unit1(10, 9, 1, bigone, graphics);
+    Unit unit1(500, 500, 1, bigone, graphics);
     SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
     Unit unit2(14, 11, 0, bigone, graphics);
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
@@ -42,6 +42,7 @@ void Game::start() {
         graphics->flip();
         SDL_Log("x");
         unit.action();
+        unit1.action();
         SDL_Log("frame");
         if (SDL_PollEvent(&event)) {
             if (event.type == SDL_KEYDOWN) {
