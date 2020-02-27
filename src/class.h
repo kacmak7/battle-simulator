@@ -5,8 +5,16 @@
 
 class Class {
 public:
-    Class();
+    Class(int health, int strength, Rgb color);
     ~Class();
+
+    void decreaseHealth(int value);
+
+    int getHealth();
+
+    int getStrength();
+    
+    Rgb getColor();
 
 private:
     /*

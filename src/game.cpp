@@ -24,16 +24,14 @@ void Game::start() {
 
     // test drawings
 
-    Class* bigone = new Class();
-
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    Unit unit(400, 550, 0, bigone, graphics);
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
-    Unit unit1(500, 500, 1, bigone, graphics);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-    Unit unit2(14, 11, 0, bigone, graphics);
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    Unit unit3(18, 15, 0, bigone, graphics);
+    Rgb red(255, 0, 0);
+    Rgb green(0, 255, 0);
+    Class* fc = new Class(100, 25, red);
+    Class* sc = new Class(150, 25, green);
+    Unit unit(400, 550, 0, fc, graphics);
+    Unit unit1(500, 500, 1, sc, graphics);
+    Unit unit2(14, 11, 0, fc, graphics);
+    Unit unit3(18, 15, 0, fc, graphics);
     //
 
     // main loop

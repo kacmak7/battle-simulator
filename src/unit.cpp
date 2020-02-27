@@ -12,6 +12,7 @@ Unit::Unit(int x, int y, int team, Class* cl, Graphics* graphics) {
     this->team = team;
     this->cl = cl;
     this->graphics = graphics;
+    this->graphics->setDrawColor(cl->getColor(), 0);
     this->graphics->drawPoint(this->position);
 }
 
@@ -39,14 +40,16 @@ void Unit::move() {
     if (canMove(nextPosition)) {
         this->graphics->erasePoint(this->position);
         this->position = nextPosition;
-        Rgb white(255, 255, 255);
-        this->graphics->setDrawColor(white, 0);
+        this->graphics->setDrawColor(cl->getColor(), 0);
         this->graphics->drawPoint(this->position);
     }
 }
 
 void Unit::attack() {
-
+    this->closestEnemy->cl->decreaseHealth(this->cl->getStrength());
+    if (this->closestEnemy->cl->getHealth() <= 0) {
+        delete this->closestEnemy;
+    }
 }
 
 Vector2 Unit::calculateNextPosition() {
