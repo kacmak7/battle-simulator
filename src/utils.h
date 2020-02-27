@@ -41,6 +41,13 @@ struct Vector2 { // TODO move this struct to the source file
             return false;
         }
     }
+
+    /*
+     * Returns result of atan2(x2-x1, y2-y1) function, where (x2, y2) is external point
+     */
+    double getDirection(Vector2 v) {
+        return atan2(v.x - x, v.y - y);
+    }
 };
 
 struct Rgb { // TODO move this too

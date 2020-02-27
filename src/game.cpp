@@ -27,7 +27,7 @@ void Game::start() {
     Class* bigone = new Class();
 
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    Unit unit(10, 10, 0, bigone, graphics);
+    Unit unit(100, 600, 0, bigone, graphics);
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     Unit unit1(10, 9, 1, bigone, graphics);
     SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
