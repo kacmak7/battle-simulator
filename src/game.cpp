@@ -45,21 +45,7 @@ void Game::start() {
         unit.action();
         unit1.action();
         SDL_Log("frame");
-        if (SDL_PollEvent(&event)) {
-            if (event.type == SDL_KEYDOWN) {
-                if (event.key.repeat == 0) {
-                    SDL_Log("KEY DOWN");
-                }
-            } else if (event.type == SDL_QUIT) {
-                this->exit();
-                return;
-            }
-        }
+        this->controller->process();
         fps.delay();
     }
-}
-
-// TODO safe exit on demand
-void Game::exit() {
-    SDL_Log("Quit");
 }
