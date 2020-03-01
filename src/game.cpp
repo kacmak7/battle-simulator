@@ -41,10 +41,8 @@ void Game::start() {
     while (true) {
         fps.frameStart = SDL_GetTicks();
         graphics->flip();
-        SDL_Log("x");
         unit.action();
         unit1.action();
-        SDL_Log("frame");
         this->controller->process();
         fps.delay();
     }

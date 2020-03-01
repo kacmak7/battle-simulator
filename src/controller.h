@@ -13,14 +13,10 @@ public:
     Controller();
     ~Controller();
 
-    // Generates and deploys units to the battlefield
-    // void deployUnits(int numberOfUnits);
-
     /*
      * The only event listener, tracks and process mouse and keyboard signals
      */
-     void process();
-
+    void process();
 
 private:
     
@@ -30,11 +26,16 @@ private:
     int team;
 
     /*
-     * User defined variable what class to deploy
+     * User defined variable what class to deploy TODO
      * Currently there is no possibility to define your class,
-     * user needs to stick with predefined options 1, 2, 3, 4
+     * user needs to stick with predefined options Q, W, E, R
      */
     Class* cl;
+    
+    /*
+     * Generates and deploys units to the battlefield
+     */ 
+    void deployUnits(int numberOfUnits);
 
     void exit();
 };
