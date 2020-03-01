@@ -22,15 +22,19 @@ Game::~Game() {}
 void Game::start() {
     graphics->clean();
 
-    // test drawings
+    // test
     Rgb red(255, 0, 0);
     Rgb green(0, 255, 0);
     Class* fc = new Class(100, 25, red);
     Class* sc = new Class(150, 25, green);
-    Unit unit(400, 550, 0, fc, graphics);
-    Unit unit1(500, 500, 1, sc, graphics);
-    Unit unit2(14, 11, 0, fc, graphics);
-    Unit unit3(18, 15, 0, fc, graphics);
+    Vector2 pos(400, 550);
+    Unit unit(pos, 0, fc, graphics);
+    Vector2 pos1(470, 600);
+    Unit unit1(pos1, 1, sc, graphics);
+    Vector2 pos2(1, 11);
+    Unit unit2(pos2, 0, fc, graphics);
+    Vector2 pos3(18, 15);
+    Unit unit3(pos3, 0, fc, graphics);
     //
 
     // main loop

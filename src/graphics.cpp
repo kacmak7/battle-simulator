@@ -14,8 +14,8 @@ Graphics::~Graphics() {
 	//SDL_DestroyRenderer(this->renderer);
 }
 
-const int Graphics::SCREEN_WIDTH = 1280;
-const int Graphics::SCREEN_HEIGHT = 720;
+const int Graphics::SCREEN_WIDTH = 1840;
+const int Graphics::SCREEN_HEIGHT = 1035;
 
 SDL_Surface* Graphics::loadImage(const std::string &filePath) {
 	if (this->_spriteSheets.count(filePath) == 0) {

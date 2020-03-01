@@ -4,11 +4,10 @@
 #include "class.h"
 #include <iostream> // TODO to be removed
 
-Unit::Unit(int x, int y, int team, Class* cl, Graphics* graphics) {
+Unit::Unit(Vector2 position, int team, Class* cl, Graphics* graphics) {
     this->id = Unit::currentId++;
     Unit::units[id] = this;
-    this->position.x = x;
-    this->position.y = y;
+    this->position = position;
     this->team = team;
     this->cl = cl;
     this->graphics = graphics;

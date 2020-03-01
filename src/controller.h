@@ -12,8 +12,6 @@ public:
     Controller();
     ~Controller();
 
-    //TODO: make a method generating units on the field near given position
-
     // Generates and deploys units to the battlefield
     void deployUnits(int numberOfUnits, Vector2 pos);
 
